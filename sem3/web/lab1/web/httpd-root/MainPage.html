@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web</title>
+    <style>
+        body{
+            background-color: white;
+            text-align: center;
+        }
+        .container{
+            background-color: #FFF8DC;
+            width: 1200px;
+            margin: 30px auto;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 30px;
+        }
+        text, p, h1, th, td{
+            font-family: "Gill Sans", sans-serif;
+            color: #8B4513
+        }
+        .head > p{
+            font-family: sans-serif;
+            text-align: left
+        }
+        svg * {
+            filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.5))
+        }
+
+       .graph {
+            text-align: center;
+       }
+        .no-shadow {
+            filter: none
+        }
+        button:hover{
+            background-color: #DEB887;
+            transform: scale(1.05);
+        }
+        button, input[type="radio"]{
+            display: inline-block;
+            font-size: 20px;
+            margin-left: 3%;
+            border: solid #8B4513 0.3px;
+            width: 50px;
+            height: 40px;
+            border-radius: 10%;
+            background: white;
+            color:  #8B4513;
+            cursor: pointer;
+        }
+
+        input[type="radio"]{
+            width: 30px;
+            height: 30px;
+        }
+
+        input[type="radio"]:checked{
+             accent-color: #DEB887;
+        }
+
+        input[type="submit"], #clear_table, #clear_form{
+            display: inline-block;
+            font-size: 20px;
+            margin-left: 2%;
+            border: solid #8B4513 0.3px;
+            width: 200px;
+            height: 50px;
+            border-radius: 3%;
+            background: white;
+            color:  #8B4513;
+            cursor: pointer;
+            margin-bottom: 1%;
+        }
+
+        input[type="submit"]:hover{
+            background-color: #98FB98;
+            transform: scale(1.05);
+        }
+
+        #clear_form:hover{
+            background-color: #FA8072;
+            transform: scale(1.05);
+        }
+
+        #clear_table:hover{
+            background-color: #fa5cf5;
+            transform: scale(1.05);
+        }
+
+        input[type="radio"]:hover{
+            transform: scale(1.05);
+        }
+
+        .formX, .formY, .formR{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px auto;
+            border-radius: 1%;
+            border: solid #DEB887 1px;
+            width: 800px;
+            padding: 10px;
+        }
+
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 58%;
+        }
+
+        .results {
+            width: 822px;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        .res {
+            border: 1px solid #DEB887;
+            padding: 10px;
+        }
+
+        .formY {
+            justify-content: left;
+            margin: 20px auto;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        #inputY{
+            margin-left: 250px;
+            width: 100px;
+            height: 35px;
+            border: 1px solid #DEB887;
+        }
+
+        #error{
+            color: red;
+            margin-bottom: 30px;
+        }
+
+        .error-false{
+            display: none;
+        }
+
+        .error-true{
+            display: block;
+        }
+
+        .activeX {
+            background-color: #DEB887;
+            font-weight: bold;
+            transform: scale(1.1);
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/decimal.js/10.4.3/decimal.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="head">
+            <p class="name"><b>Козлова Ульяна Сергеевна</b></p>
+            <p class="group">Группа <b>Р3220</b></p>
+            <p class="variant"><b>2005</b> вариант</p>
+        </div>
+
+        <div class="graph">
+            <svg width="500" height="500">
+            <!--Основной рисунок-->
+                <circle class="no-shadow" r="100" cx="250" cy="250" fill="#8B4513"></circle>
+                <rect x="50" y="250" height="100" width="200" fill="#8B4513"></rect>
+                <rect class="no-shadow" x="250" y="250" height="100" width="200" fill="#FFF8DC"></rect>
+                <polygon points="250, 250 250, 150 350, 250" fill="#8B4513"></polygon>
+                <polygon class="no-shadow" points="350, 250 250, 150 350, 150" fill="#FFF8DC"></polygon>
+                <line x1="250" y1="0" x2="250" y2="500" stroke="black"></line>
+                <line x1="0" y1="250" x2="500" y2="250" stroke="black"></line>
+
+            <!--Метки-->
+                <line x1="50" y1="247" x2="50" y2="253" stroke="black"></line>
+                <line x1="150" y1="247" x2="150" y2="253" stroke="black"></line>
+                <line x1="350" y1="247" x2="350" y2="253" stroke="black"></line>
+                <line x1="450" y1="247" x2="450" y2="253" stroke="black"></line>
+
+                <line x1="247" y1="450" x2="253" y2="450" stroke="black"></line>
+                <line x1="247" y1="350" x2="253" y2="350" stroke="black"></line>
+                <line x1="247" y1="150" x2="253" y2="150" stroke="black"></line>
+                <line x1="247" y1="50" x2="253" y2="50" stroke="black"></line>
+
+            <!--Текст-->
+                <text x="45" y="247">-R</text>
+                <text x="135" y="247">-R/2</text>
+                <text x="340" y="247">R/2</text>
+                <text x="445" y="247">R</text>
+                <text x="255" y="54">R</text>
+                <text x="255" y="154">R/2</text>
+                <text x="255" y="354">-R/2</text>
+                <text x="255" y="454">-R</text>
+                <text x="255" y="10">y</text>
+                <text x="490" y="245">x</text>
+
+            <!--Стрелочки-->
+                <line x1="493" y1="253" x2="500" y2="250" stroke="black"></line>
+                <line x1="493" y1="247" x2="500" y2="250" stroke="black"></line>
+
+                <line x1="253" y1="7" x2="250" y2="0" stroke="black"></line>
+                <line x1="247" y1="7" x2="250" y2="0" stroke="black"></line>
+            </svg>
+        </div>
+
+
+        <div class="form">
+            <div class="formX">
+                <p>Изменение X</p>
+                    <table class="buttonsX">
+                        <tr>
+                            <th><button class="buttonX" value="-2">-2</button></th>
+                            <th><button class="buttonX" value="-1.5">-1.5</button></th>
+                            <th><button class="buttonX" value="-1">-1</button></th>
+                            <th><button class="buttonX" value="-0.5">-0.5</button></th>
+                            <th><button class="buttonX" value="0">0</button></th>
+                            <th><button class="buttonX" value="0.5">0.5</button></th>
+                            <th><button class="buttonX" value="1">1</button></th>
+                            <th><button class="buttonX" value="1.5">1.5</button></th>
+                            <th><button class="buttonX" value="2">2</button></th>
+                        </tr>
+                    </table>
+            </div>
+            <div class="formY">
+                <p>Изменение Y</p>
+                <label><input type="number" id="inputY" min="-3" max="5" required step="any"></label>
+            </div>
+            <div class="formR">
+                <p>Изменение R</p>
+                <table class="radioRs">
+                    <tr>
+                        <th><label><input type="radio" class="radioR" name="r" value="1">1</label></th>
+                        <th><label><input type="radio" class="radioR" name="r" value="2">2</label></th>
+                        <th><label><input type="radio" class="radioR" name="r" value="3">3</label></th>
+                        <th><label><input type="radio" class="radioR" name="r" value="4">4</label></th>
+                        <th><label><input type="radio" class="radioR" name="r" value="5">5</label></th>
+                    </tr>
+                </table>
+            </div>
+            <div class="userSender">
+                <input type="submit" class="sendButton" value="Готово">
+            </div>
+            <button id="clear_form">Очистить форму</button>
+            <br>
+            <button id="clear_table">Очистить таблицу</button>
+            <p id="error" class="error-false">Не все значения поданы или поданы неверно! Попробуйте еще раз</p>
+            <div class="divResults">
+                <h1>Результаты</h1>
+                <table class="results">
+                    <tr>
+                        <th class="res">X</th>
+                        <th class="res">Y</th>
+                        <th class="res">R</th>
+                        <th class="res">Настоящее время</th>
+                        <th class="res">Время выполнения</th>
+                        <th class="res">Попадание (да/нет)</th>
+                    </tr>
+                    <tbody id="results-body"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
