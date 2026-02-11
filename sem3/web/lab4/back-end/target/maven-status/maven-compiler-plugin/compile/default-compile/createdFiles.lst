@@ -1,0 +1,16 @@
+com\uliana\lab4\rest\PointsSseRegistry.class
+com\uliana\lab4\dto\PointDTO.class
+com\uliana\lab4\dto\LoginRequest.class
+com\uliana\lab4\rest\DataSourceConfig.class
+com\uliana\lab4\entity\UserEntity.class
+com\uliana\lab4\rest\ApplicationConfig.class
+com\uliana\lab4\ejb\PointBean.class
+com\uliana\lab4\ejb\AuthBean.class
+com\uliana\lab4\rest\PointsResource.class
+com\uliana\lab4\dto\RegisterRequest.class
+com\uliana\lab4\entity\PointEntity.class
+com\uliana\lab4\rest\AuthResource$ErrorResponse.class
+com\uliana\lab4\dto\ProfileUpdateRequest.class
+com\uliana\lab4\dto\MeDto.class
+com\uliana\lab4\util\HitChecker.class
+com\uliana\lab4\rest\AuthResource.class
